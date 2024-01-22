@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Artifactory
+  site: 'https://artifactory.org.au/'
   base: '/'
   trailingSlash: false
 
@@ -9,16 +9,16 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Artifactory
+    template: '%s — Artifactory'
+  description: "The Perth Artifactory is a makerspace and community workshop in Osborne Park, Western Australia, fostering creativity, accessibility, and wellbeing for people of all backgrounds and skill levels."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Artifactory
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/favicon/Artifactory_logo_COMBO-VERT_ORANGE.png'
         width: 1200
         height: 628
     type: website
@@ -60,9 +60,6 @@ apps:
       robots:
         index: false
 
-    isRelatedPostsEnabled: true
-    relatedPostsCount: 4
-
 analytics:
   vendors:
     googleAnalytics:
@@ -82,10 +79,12 @@ ui:
         heading: rgb(0 0 0)
         muted: rgb(40 40 40)
         bgPage: rgb(255 255 255)
-        primary: rgb(0 124 220)
-        secondary: rgb(30 58 138)
-        accent: rgb(109 40 217)
-        info: rgb(119 182 234)
+        #primary: rgb(220 38 38)
+        #secondary: rgb(185 28 28)
+        primary: rgb(255 36 0)
+        secondary: rgb(196 28 0)
+        accent: rgb(245 158 11)
+        info: rgb(145, 0, 0)
         success: rgb(54 211 153)
         warning: rgb(251 189 35)
         error: rgb(248 114 114)
@@ -97,11 +96,13 @@ ui:
         default: rgb(247, 248, 248)
         heading: rgb(247, 248, 248)
         muted: rgb(200, 188, 208)
-        bgPage: rgb(3 6 32)
-        primary: rgb(29 78 216)
-        secondary: rgb(30 58 138)
-        accent: rgb(135 77 2267)
-        info: rgb(58 191 248)
+        bgPage: rgb(18 18 18)
+        #primary: rgb(220 38 38)
+        #secondary: rgb(185 28 28)
+        primary: rgb(255 36 0)
+        secondary: rgb(196 28 0)
+        accent: rgb(245 158 11)
+        info: rgb(145, 0, 0)
         success: rgb(54 211 153)
         warning: rgb(251 189 35)
         error: rgb(248 114 114)

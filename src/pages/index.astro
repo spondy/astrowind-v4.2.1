@@ -2,398 +2,207 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Perth Artifactory',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Hero  ******************* -->
 
   <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
-    ]}
-    image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
+    callToAction={{ text: 'Become a member', href: '/pricing', icon: 'tabler:users' }}
+    callToAction2={{ text: 'Learn more', href: '#features' }}
+    image={{ src: '~/assets/images/hero.png', alt: 'Perth Artifactory' }}
   >
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS
+      Make something incredible
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 4.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-       Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages
-      & Blogs.
+        <span class="font-semibold">The Perth Artifactory</span> is a community workshop and makerspace in Osborne Park, Western Australia.</span>
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
 
-  <Note />
-
-  <!-- Features Widget *************** -->
+  <!-- What we offer  *************** -->
 
   <Features
     id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022."
+    tagline="What we offer"
+    title="What will you find at the Artifactory?"
+    subtitle="We are dedicated to fostering creativity, accessibility, and wellbeing for people of all backgrounds and skill levels. We aim to equip our community with new skills, nurture their passions, and promote happiness through inbridled invention."
     items={[
       {
-        title: 'Astro + Tailwind CSS Integration',
+        title: 'Dedicated project area',
         description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
+          'The heart of the Artifactory where you can work on your latest ideas and get inspired by what others are working on.',
+        icon: 'tabler:hammer',
       },
       {
-        title: 'Ready-to-use Components',
+        title: 'Specialised tools',
         description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
+          'We have a wide range of hard to find tools including laser cutters, 3D printers, CNC machines, lathes, mills, and more.',
+        icon: 'tabler:settings',
       },
       {
-        title: 'Best Practices',
+        title: 'Social area',
         description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
+          'The home of our regular social events where you can take a break from making and chat with other members. You can watch TV, listen to music, or play one of our dozens of board games.',
+        icon: 'tabler:device-gamepad-2',
       },
       {
-        title: 'Excellent Page Speed',
+        title: 'Quiet labs',
         description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
+          'If you want a calmer environment to focus, our computer and electronics labs are the perfect place.',
+        icon: 'tabler:device-desktop',
       },
       {
-        title: 'Search Engine Optimization (SEO)',
+        title: 'Outdoor spaces',
         description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
+          'For the messier projects, or simply to sit with friends and get a bit of sunshine.',
+        icon: 'tabler:sun-high',
       },
       {
-        title: 'Open to new ideas and contributions',
+        title: 'Rehearsal Room',
         description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
+          'Treated room with PA and limited backline, great for rehearsals, recording, and podcasts. Suits up to a four/five piece band.',
+        icon: 'tabler:music',
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
+  {/*
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    id="testimonials"
+    tagline="testimonials"
+    title="Words from our community"
+    testimonials={[
+      {
+        testimonial: `Several of our clients engage with the Artifactory and have found not only a creative outlet that encourages their abilities to shine,
+                      but a culture that has helped them find compassion, genuine interest, camaraderie and become valued members of a community.
+                      ...the Artifactory not only offers a maker space but an inclusive place for all to make friends and find a valued role in a community.`,
+        name: 'Paul Fleay',
+        job: 'CEO, Inclusion WA',
+        image: {
+          src: '~/assets/images/people/paul-fleay.png',
+          alt: 'Paul Fleay Image',
+        },
+      },
+      {
+        testimonial: `My husband Jean-Max was diagnosed with dementia in 2021.
+                      As time has progressed, we had become more isolated...
+                      This year, he started going to the Perth Artifactory, and has made a beautiful chair for one of his grand daughters, which will become a family heirloom.
+                      Jean is often able to share lunch with other members of the Artifactory, who always take time to sit down with him and talk.
+                      Seeing Jean using a power tool for the first time in years, with the support of an Artifactory volunteer was just wonderful.`,
+        name: 'Anna Prosper',
+        job: "Jean-Max's Wife",
+        image: {
+          src: '~/assets/images/people/noimg-01.png',
+          alt: 'Anna Prosper Image',
+        },
+      },
+      {
+        testimonial:
+          'I was able to download and use a professional website template within minutes. The step-by-step process and user-friendly interface made it easy for me to create a website that looks as if it was designed by a pro.',
+        name: 'Sidney Hansen',
+        job: 'Decorator',
+        image: {
+          src: '~/assets/images/people/noimg-03.png',
+          alt: 'Image',
+        },
+      },
+    ]}
+  />
+ */}
+
+  <!-- Slack **************** -->
 
   <Content
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    id="slack"
+    tagline="Connect with us"
+    title="Join our online community"
+    subtitle="Slack is our online community platform where members and non-members alike chat and socialise."
+    callToAction2={{
+      text: 'Join our Slack',
+      href: 'https://perart.io/slack',
+      icon: 'tabler:brand-slack',}}
     items={[
       {
-        title: 'Built on top of Astro 4.0',
+        title: 'PC and mobile',
         description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+          "Available on all major platforms, including PC, Android, and iOS.",
+        icon: 'tabler:devices',
       },
       {
-        title: 'Styled using Tailwind CSS',
+        title: 'Have a question?',
         description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+          "Ask away! By joining our Slack you gain access to everyone in our community. Even past members that have since moved interstate and overseas are still active in our community.",
+        icon: 'tabler:zoom-question',
       },
       {
-        title: 'Cross-browser compatibility',
+        title: 'Find out what people are working on',
         description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+          "Hop into one of our topic specific channels to see what other people are doing in your favourite hobby. Can't find an appropriate channel? You can make your own!",
+        icon: 'tabler:cloud-star',
+      },
+      {
+        title: 'Communicate with others',
+        description:
+          "If you need to get in contact with another member of the community you can simply send them a direct message and not have to worry about bumping into them at the Artifactory.",
+        icon: 'tabler:messages',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: '~/assets/images/slack.png',
+      alt: 'Perth Artifactory Slack',
     }}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-       Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
   </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</em>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-      },
-      {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-      },
-      {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-      },
-    ]}
-  />
 
   <!-- Stats Widget ****************** -->
 
   <Stats
+    id="stats"
+    title="Statistics about us"
     stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
+      { title: 'Active Members', amount: '50+' },
+      { title: 'Sponsored Members', amount: '5' },
+      { title: 'Monthly Events', amount: '15+' },
+      { title: 'Monthly Attendees', amount: '300+' },
     ]}
   />
+
+  <!-- Map ******************* -->
+
+  <div style="overflow: hidden" class="mx-auto max-w-5xl w-11/12 rounded-lg bg-neutral-500 shadow-lg">
+    <iframe src="https://snazzymaps.com/embed/517349" width="100%" height="600px" style="border:none;"></iframe>
+  </div>
 
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
+    title="Join our community today!"
+    callToAction={{
+      text: 'Become a member',
+      href: '/pricing',
+      icon: 'tabler:users',
+    }}
+    callToAction2={{
+      text: 'Plan your first visit',
+      href: '/first_visit',
+    }}
+  />
 
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
 </Layout>

@@ -1,6 +1,3 @@
-import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
-import type { HTMLAttributes, ImageMetadata } from 'astro/types';
-
 export interface Post {
   /** A unique ID number that identifies a post. */
   id: string;
@@ -21,7 +18,7 @@ export interface Post {
   /** Optional summary of post content. */
   excerpt?: string;
   /**  */
-  image?: ImageMetadata | string;
+  image?: string;
 
   /**  */
   category?: string;
@@ -37,7 +34,7 @@ export interface Post {
   draft?: boolean;
 
   /**  */
-  Content?: AstroComponentFactory;
+  Content?: unknown;
   content?: string;
 
   /**  */
@@ -175,12 +172,12 @@ export interface Disclaimer {
 }
 
 // COMPONENTS
-export interface CallToAction extends HTMLAttributes<a> {
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'link';
+export interface CallToAction {
+  targetBlank?: boolean;
   text?: string;
   icon?: string;
+  href?: string;
   classes?: Record<string, string>;
-  type?: 'button' | 'submit' | 'reset';
 }
 
 export interface ItemGrid {
@@ -232,7 +229,7 @@ export interface Testimonials extends Headline, Widget {
   callToAction?: CallToAction;
 }
 
-export interface Brands extends Headline, Widget {
+export interface Clients extends Headline, Widget {
   icons?: Array<string>;
   images?: Array<Image>;
 }
@@ -276,7 +273,6 @@ export interface Content extends Headline, Widget {
   columns?: number;
   isReversed?: boolean;
   isAfterContent?: boolean;
-  callToAction?: CallToAction;
 }
 
 export interface Contact extends Headline, Form, Widget {}
