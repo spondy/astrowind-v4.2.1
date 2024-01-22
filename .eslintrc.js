@@ -1,4 +1,3 @@
-/** @type {import("eslint").Linter.Config} */
 module.exports = {
   env: {
     node: true,
@@ -6,9 +5,7 @@ module.exports = {
     browser: true,
   },
   extends: ['eslint:recommended', 'plugin:astro/recommended'],
-  parser: '@typescript-eslint/parser',
   parserOptions: {
-    tsconfigRootDir: __dirname,
     ecmaVersion: 'latest',
     sourceType: 'module',
   },

@@ -20,13 +20,11 @@ export interface MetaDataConfig extends Omit<MetaData, 'title'> {
 export interface I18NConfig {
   language: string;
   textDirection: string;
-  dateFormatter?: Intl.DateTimeFormat;
+  dateFormatter: unknown;
 }
 export interface AppBlogConfig {
   isEnabled: boolean;
   postsPerPage: number;
-  isRelatedPostsEnabled: boolean;
-  relatedPostsCount: number;
   post: {
     isEnabled: boolean;
     permalink: string;
@@ -80,7 +78,7 @@ const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
   analytics?: unknown;
 };
 
-const DEFAULT_SITE_NAME = 'Website';
+const DEFAULT_SITE_NAME = 'Perth Artifactory';
 
 const getSite = () => {
   const _default = {
@@ -138,8 +136,6 @@ const getAppBlog = () => {
   const _default = {
     isEnabled: false,
     postsPerPage: 6,
-    isRelatedPostsEnabled: false,
-    relatedPostsCount: 4,
     post: {
       isEnabled: true,
       permalink: '/blog/%slug%',
@@ -200,9 +196,9 @@ const getAnalytics = () => {
   return merge({}, _default, config?.analytics ?? {}) as AnalyticsConfig;
 };
 
-export const SITE = getSite();
-export const I18N = getI18N();
-export const METADATA = getMetadata();
-export const APP_BLOG = getAppBlog();
-export const UI = getUI();
-export const ANALYTICS = getAnalytics();
+export const SITE_CONFIG = getSite();
+export const I18N_CONFIG = getI18N();
+export const METADATA_CONFIG = getMetadata();
+export const APP_BLOG_CONFIG = getAppBlog();
+export const UI_CONFIG = getUI();
+export const ANALYTICS_CONFIG = getAnalytics();
