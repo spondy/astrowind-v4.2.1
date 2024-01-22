@@ -3,158 +3,181 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Events',
-      href: getPermalink('/events'),
-    },
-
-    {
-      text: 'Membership',
+      text: 'Homes',
       links: [
         {
-          text: 'What we offer',
-          href: getPermalink('/facilities'),
+          text: 'SaaS',
+          href: getPermalink('/homes/saas'),
         },
         {
-          text: 'Your first visit',
-          href: getPermalink('/first_visit'),
+          text: 'Startup',
+          href: getPermalink('/homes/startup'),
+        },
+        {
+          text: 'Mobile App',
+          href: getPermalink('/homes/mobile-app'),
+        },
+        {
+          text: 'Personal',
+          href: getPermalink('/homes/personal'),
+        },
+      ],
+    },
+    {
+      text: 'Pages',
+      links: [
+        {
+          text: 'Features (Anchor Link)',
+          href: getPermalink('/#features'),
+        },
+        {
+          text: 'Services',
+          href: getPermalink('/services'),
         },
         {
           text: 'Pricing',
           href: getPermalink('/pricing'),
         },
         {
-          text: 'Sponsored membership',
-          href: getPermalink('/free_membership'),
-        },
-      ],
-    },
-
-    {
-      text: 'Pages',
-      links: [
-        {
-          text: 'FAQs',
-          href: getPermalink('/faq'),
-        },
-        {
-          text: 'Wiki',
-          href: 'https://wiki.artifactory.org.au/',
-        },
-        {
-          text: 'Webcams',
-          href: 'https://space.artifactory.org.au/',
-        },
-        {
-          text: 'Slack',
-          href: getPermalink('/#slack'),
-          //href: 'https://perart.io/slack',
-        },
-        {
-          text: 'Sponsored Events',
-          href: getPermalink('/sponsored_events'),
-        },
-      ],
-    },
-
-
-    {
-      text: 'About us',
-      links: [
-        {
-          text: 'Our Values',
+          text: 'About us',
           href: getPermalink('/about'),
         },
         {
-          text: 'Location',
-          href: getPermalink('/about/#location'),
+          text: 'Contact',
+          href: getPermalink('/contact'),
         },
         {
-          text: 'Contact Us',
-          href: getPermalink('/about/#contact'),
+          text: 'Terms',
+          href: getPermalink('/terms'),
         },
         {
-          text: 'Code of Conduct',
-          href: getPermalink('/code_of_conduct'),
+          text: 'Privacy policy',
+          href: getPermalink('/privacy'),
         },
       ],
     },
+    {
+      text: 'Landing',
+      links: [
+        {
+          text: 'Lead Generation',
+          href: getPermalink('/landing/lead-generation'),
+        },
+        {
+          text: 'Long-form Sales',
+          href: getPermalink('/landing/sales'),
+        },
+        {
+          text: 'Click-Through',
+          href: getPermalink('/landing/click-through'),
+        },
+        {
+          text: 'Product Details (or Services)',
+          href: getPermalink('/landing/product'),
+        },
+        {
+          text: 'Coming Soon or Pre-Launch',
+          href: getPermalink('/landing/pre-launch'),
+        },
+        {
+          text: 'Subscription',
+          href: getPermalink('/landing/subscription'),
+        },
+      ],
+    },
+    {
+      text: 'Blog',
+      links: [
+        {
+          text: 'Blog List',
+          href: getBlogPermalink(),
+        },
+        {
+          text: 'Article',
+          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+        },
+        {
+          text: 'Article (with MDX)',
+          href: getPermalink('markdown-elements-demo-post', 'post'),
+        },
+        {
+          text: 'Category Page',
+          href: getPermalink('tutorials', 'category'),
+        },
+        {
+          text: 'Tag Page',
+          href: getPermalink('astro', 'tag'),
+        },
+      ],
+    },
+    {
+      text: 'Widgets',
+      href: '#',
+    },
   ],
-  actions: [{ type: 'button', text: 'Sign Up', href: '/pricing' }],
+  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };
-
-
 
 export const footerData = {
   links: [
     {
-      title: 'Navigation',
+      title: 'Product',
       links: [
-        { text: 'Home', href: '/' },
-        { text: 'Plan your first visit', href: '/first_visit' },
-        { text: 'Upcoming Events', href: '/events' },
-        { text: 'FAQs', href: '/faq' },
-        { text: 'Wiki', href: 'https://wiki.artifactory.org.au/' },
-        { text: 'Webcams', href: 'https://space.artifactory.org.au/' },
+        { text: 'Features', href: '#' },
+        { text: 'Security', href: '#' },
+        { text: 'Team', href: '#' },
+        { text: 'Enterprise', href: '#' },
+        { text: 'Customer stories', href: '#' },
+        { text: 'Pricing', href: '#' },
+        { text: 'Resources', href: '#' },
       ],
     },
     {
-      title: 'Membership',
+      title: 'Platform',
       links: [
-        { text: 'Become a member', href: '/pricing' },
-        { text: 'What we offer', href: '/facilities' },
-        { text: 'Pricing', href: '/pricing' },
-        { text: 'Sponsored membership', href: '/free_membership' },
+        { text: 'Developer API', href: '#' },
+        { text: 'Partners', href: '#' },
+        { text: 'Atom', href: '#' },
+        { text: 'Electron', href: '#' },
+        { text: 'AstroWind Desktop', href: '#' },
       ],
     },
     {
-      title: 'Organisation',
+      title: 'Support',
       links: [
-        { text: 'Code of Conduct', href: '/code_of_conduct' },
-        { text: 'Discussion and Voting', href: 'https://perart.io/vote' },
-        { text: 'Contact Us', href: '/about/#contact' },
-        { text: 'Slack', href: '/#slack' },
-        { text: 'Meetup', href: 'https://www.meetup.com/Perth-Artifactory/' },
+        { text: 'Docs', href: '#' },
+        { text: 'Community Forum', href: '#' },
+        { text: 'Professional Services', href: '#' },
+        { text: 'Skills', href: '#' },
+        { text: 'Status', href: '#' },
       ],
     },
     {
-      title: 'Australian Makerspaces',
+      title: 'Company',
       links: [
-        { text: 'ACT: Make, Hack, Void', href: 'https://canberramaker.space/', target: '_blank'},
-        { text: 'NSW: Robots & Dinosaurs', href: 'https://robodino.org/', target: '_blank'},
-        { text: 'SA: Hackerspace Adelaide', href: 'https://www.hackerspace-adelaide.org.au/', target: '_blank'},
-        { text: 'TAS: Hobart Hackerspace', href: 'https://www.hobarthackerspace.org.au/', target: '_blank'},
-        { text: 'QLD: Brisbane Makerspace', href: 'https://brisbanemaker.space/', target: '_blank'},
-        { text: 'QLD: HSBNE', href: 'https://hsbne.org/', target: '_blank'},
-        { text: 'VIC: CCHS', href: 'https://hackmelbourne.com/', target: '_blank'},
-        { text: 'WA: South West Makers', href: 'http://swmakers.org/', target: '_blank'},
+        { text: 'About', href: '#' },
+        { text: 'Blog', href: '#' },
+        { text: 'Careers', href: '#' },
+        { text: 'Press', href: '#' },
+        { text: 'Inclusion', href: '#' },
+        { text: 'Social Impact', href: '#' },
+        { text: 'Shop', href: '#' },
       ],
     },
-/*    {
-      title: 'Sponsors and Friends',
-      links: [
-        { text: 'Alby Beer', href: 'http://alby.beer/', target: '_blank'},
-        { text: 'Altronics', href: 'https://www.altronics.com.au/' },
-        { text: 'Aussie Broadband', href: 'https://www.aussiebroadband.com.au/' },
-        { text: 'Google NFP', href: 'https://www.google.com.au/nonprofits/' },
-        { text: 'LotteryWest', href: 'https://www.lotterywest.wa.gov.au/' },
-        { text: 'St. John WA', href: 'https://stjohnwa.com.au/' },
-        { text: 'Supanova', href: 'https://www.supanova.com.au/' },
-        { text: 'Taubmans', href: 'https://www.taubmans.com.au/' },
-        { text: 'WebInABox', href: 'https://www.webinabox.net.au/' },
-      ],
-    }, */
   ],
   secondaryLinks: [
-    { text: 'About', href: '/about' },
-    { text: 'Constitution', href: 'https://wiki.artifactory.org.au/en/constitution' },
+    { text: 'Terms', href: getPermalink('/terms') },
+    { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/pages/The-Perth-Artifactory/178514525501368' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/theperthartifactory/' },
-    { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.facebook.com/pages/The-Perth-Artifactory/178514525501368' },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/Perth-Artifactory' },
+    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
+    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
   ],
   footNote: `
-  Perth Artifactory Inc is a not-for-profit incorporated association in Western Australia and <span class="md:inline-block">registered as a charity with the Australian Charities and Not-for-profits Commission.</span>
+    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)]"></span>
+    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
   `,
 };
